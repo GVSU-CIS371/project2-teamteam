@@ -34,16 +34,31 @@
         // - "Electronics" should display all products categorized as "Electronics."
         const electronicsLinkRef = document.getElementById("electronics");
         electronicsLinkRef.addEventListener("click", () => {
-            const electronicsList = getByCategory("Electronics");
-            console.log(electronicsList);
-            renderProducts(electronicsList);
+          const electronicsList = getByCategory("Electronics");
+          console.log(electronicsList);
+          renderProducts(electronicsList);
         });
         // - "Clothing" should display all products categorized as "Clothing."
+        const clothingLinkRef = document.getElementById("clothing");
+        clothingLinkRef.addEventListener("click", () => {
+          const clothingList = getByCategory("Clothing");
+          console.log(clothingList);
+          renderProducts(clothingList);
+        });
         // - "Groceries" should display all products categorized as "Groceries."
+        const groceriesLinkRef = document.getElementById("groceries");
+        groceriesLinkRef.addEventListener("click", () => {
+          const groceriesList = getByCategory("Groceries");
+          console.log(groceriesList);
+          renderProducts(groceriesList);
+        });
         // - "Best Seller" should display all products with a rating greater than 4.5.
-
-        
-        // your code
+        const bestSellerLinkRef = document.getElementById("bestSeller");
+        bestSellerLinkRef.addEventListener("click", () => {
+          const bestSellerList = getByRating(4.5);
+          console.log(bestSellerList);
+          renderProducts(bestSellerList);
+        });
       </script>
     </main>
     <footer>

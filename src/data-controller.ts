@@ -14,7 +14,7 @@ function generateProductHTML(product: Product): string {
 // COMPLETED: will render each of the individual products now instead of being a blank screen.
 function renderProducts(prods: Product[]): void {
     // loop through every object in prods array and throw them as children of the div with id="main-container".
-    let mainHTMLElement = document.getElementById("main-container"); 
+    let mainHTMLElement = document.getElementById("main-container");
     // when we call this function for the on category link click, we will need to make the contents of the page be blank and only add the ones that pass our
     // condition. So, we will set the contents of the mainHTMLElement to "" first, then add the stuff from the array passed in.
     mainHTMLElement!.innerHTML = "";
@@ -35,12 +35,18 @@ function getByCategory(category: string): Product[] {
         console.log(prod.category == category);
         return prod.category == category;
     })
-    console.log("filtered Products is:", filteredProducts);
+    console.log("filtered Products are:", filteredProducts);
     return filteredProducts;
 };
 
-function getByRating(minRating: number): void {
-    // your code
+function getByRating(minRating: number): Product[] {
+    // use filter to return new array of just the elements that are greater than the specified minimum rating
+    const filteredRatings = products.filter((prod) => {
+        console.log(prod.rating >= minRating);
+        return prod.rating >= minRating;
+    })
+    console.log("filtered Products are:", filteredRatings);
+    return filteredRatings;
 }
 
 export { renderProducts, getByCategory, getByRating };
