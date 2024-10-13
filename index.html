@@ -32,6 +32,12 @@
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
         // - "Electronics" should display all products categorized as "Electronics."
+        const electronicsLinkRef = document.getElementById("electronics");
+        electronicsLinkRef.addEventListener("click", () => {
+            const electronicsList = getByCategory("Electronics");
+            console.log(electronicsList);
+            renderProducts(electronicsList);
+        });
         // - "Clothing" should display all products categorized as "Clothing."
         // - "Groceries" should display all products categorized as "Groceries."
         // - "Best Seller" should display all products with a rating greater than 4.5.

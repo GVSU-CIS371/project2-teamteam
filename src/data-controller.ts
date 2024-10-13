@@ -15,6 +15,9 @@ function generateProductHTML(product: Product): string {
 function renderProducts(prods: Product[]): void {
     // loop through every object in prods array and throw them as children of the div with id="main-container".
     let mainHTMLElement = document.getElementById("main-container"); 
+    // when we call this function for the on category link click, we will need to make the contents of the page be blank and only add the ones that pass our
+    // condition. So, we will set the contents of the mainHTMLElement to "" first, then add the stuff from the array passed in.
+    mainHTMLElement!.innerHTML = "";
     prods.forEach((prod: Product) => {
         let htmlProductElement = generateProductHTML(prod);
         // our div for main-container is created before this function is called so we can use the non-null assertion operator ! to
@@ -26,9 +29,15 @@ function renderProducts(prods: Product[]): void {
     )
 }
 
-function getByCategory(category: string): void {
-    // your code
-}
+function getByCategory(category: string): Product[] {
+    // use filter to return new array of just the elements that match the specified category
+    const filteredProducts = products.filter((prod) => {
+        console.log(prod.category == category);
+        return prod.category == category;
+    })
+    console.log("filtered Products is:", filteredProducts);
+    return filteredProducts;
+};
 
 function getByRating(minRating: number): void {
     // your code
