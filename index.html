@@ -13,7 +13,7 @@
 
   <div id="app">
     <header>
-      <h1>My Store</h1>
+      <h1><a href="#" id="allProducts">My Store</a></h1>
       <nav>
         <ul>
           <li><a href="#" id="electronics">Electronics</a></li>
@@ -58,6 +58,11 @@
           const bestSellerList = getByRating(4.5);
           console.log(bestSellerList);
           renderProducts(bestSellerList);
+        });
+        // - Shows all products when clicking "My Store"
+        const showAll = document.getElementById("allProducts");
+        showAll.addEventListener("click", () => {
+          renderProducts(products);
         });
       </script>
     </main>
